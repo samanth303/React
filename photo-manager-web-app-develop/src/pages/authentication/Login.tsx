@@ -11,23 +11,23 @@ import {
   Link,
   Typography
 } from '@material-ui/core';
-// import AuthBanner from '../../components/authentication/AuthBanner';
+import AuthBanner from '../../components/authentication/AuthBanner';
 import {
   LoginAmplify,
-  // LoginAuth0,
-  // LoginFirebase,
+  LoginAuth0,
+  LoginFirebase,
   LoginJWT
 } from '../../components/authentication/login';
 import Logo from '../../components/Logo';
 import useAuth from '../../hooks/useAuth';
 import gtm from '../../lib/gtm';
 
-// const platformIcons = {
-//   Amplify: '/static/icons/amplify.svg',
-//   Auth0: '/static/icons/auth0.svg',
-//   Firebase: '/static/icons/firebase.svg',
-//   JWT: '/static/icons/jwt.svg'
-// };
+const platformIcons = {
+  Amplify: '/static/icons/amplify.svg',
+  Auth0: '/static/icons/auth0.svg',
+  Firebase: '/static/icons/firebase.svg',
+  JWT: '/static/icons/jwt.svg'
+};
 
 const Login: FC = () => {
   const { platform } = useAuth() as any;
@@ -49,7 +49,7 @@ const Login: FC = () => {
           minHeight: '100vh'
         }}
       >
-        {/* <AuthBanner /> */}
+        <AuthBanner />
         <Container
           maxWidth="sm"
           sx={{ py: '80px' }}
@@ -94,14 +94,14 @@ const Login: FC = () => {
                   >
                     Log in
                   </Typography>
-                  {/* <Typography
+                  <Typography
                     color="textSecondary"
                     variant="body2"
                   >
                     Log in on the internal platform
-                  </Typography> */}
+                  </Typography>
                 </div>
-                {/* <Box
+                <Box
                   sx={{
                     height: 32,
                     '& > img': {
@@ -114,7 +114,7 @@ const Login: FC = () => {
                     alt="Auth platform"
                     src={platformIcons[platform]}
                   />
-                </Box> */}
+                </Box>
               </Box>
               <Box
                 sx={{
@@ -123,8 +123,8 @@ const Login: FC = () => {
                 }}
               >
                 {platform === 'Amplify' && <LoginAmplify />}
-                {/* {platform === 'Auth0' && <LoginAuth0 />}
-                  {platform === 'Firebase' && <LoginFirebase />} */}
+                {platform === 'Auth0' && <LoginAuth0 />}
+                {platform === 'Firebase' && <LoginFirebase />}
                 {platform === 'JWT' && <LoginJWT />}
               </Box>
               <Divider sx={{ my: 3 }} />

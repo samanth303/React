@@ -3,7 +3,7 @@ import { useNavigate } from 'react-router-dom';
 import * as Yup from 'yup';
 import { Formik } from 'formik';
 import {
-  // Alert,
+  Alert,
   Box,
   Button,
   FormHelperText,
@@ -20,8 +20,8 @@ const LoginAmplify: FC = (props) => {
   return (
     <Formik
       initialValues={{
-        email: '',
-        password: '',
+        email: 'demo@devias.io',
+        password: 'Password123!',
         submit: null
       }}
       validationSchema={
@@ -127,7 +127,7 @@ const LoginAmplify: FC = (props) => {
               Log In
             </Button>
           </Box>
-          {/* <Box sx={{ mt: 3 }}>
+          <Box sx={{ mt: 3 }}>
             <Alert severity="info">
               <div>
                 You can use
@@ -139,7 +139,7 @@ const LoginAmplify: FC = (props) => {
                 <b>Password123!</b>
               </div>
             </Alert>
-          </Box> */}
+          </Box>
         </form>
       )}
     </Formik>

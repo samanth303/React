@@ -2,7 +2,7 @@ import type { FC } from 'react';
 import * as Yup from 'yup';
 import { Formik } from 'formik';
 import {
-  // Alert,
+  Alert,
   Box,
   Button,
   FormHelperText,
@@ -119,7 +119,7 @@ const LoginJWT: FC = (props) => {
               Log In
             </Button>
           </Box>
-          {/* <Box sx={{ mt: 2 }}>
+          <Box sx={{ mt: 2 }}>
             <Alert severity="info">
               <div>
                 Use
@@ -131,7 +131,7 @@ const LoginJWT: FC = (props) => {
                 <b>Password123!</b>
               </div>
             </Alert>
-          </Box> */}
+          </Box>
         </form>
       )}
     </Formik>
